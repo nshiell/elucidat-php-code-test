@@ -14,5 +14,8 @@ class SulfurasItemType
     /**
      * "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
      */
-    public function nextDay(Item $item) {}
+    public function nextDay(Item $item)
+    {
+        $item->quality = 80;
+    }
 }
