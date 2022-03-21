@@ -42,6 +42,12 @@ class GildedRose
                 break;
             }
 
+            if ($item->name == 'Backstage passes to a TAFKAL80ETC concert') {
+                $type = new ItemTypes\BackstagelItemType();
+                $type->nextDay($item);
+                break;
+            }
+
 
             if ($item->name == 'Conjured Mana Cake') {
                 $qualityDayDelata = 2;
