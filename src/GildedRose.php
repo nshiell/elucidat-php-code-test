@@ -30,6 +30,12 @@ class GildedRose
                 break;
             }
 
+            if ($item->name == 'Aged Brie') {
+                $type = new ItemTypes\AgedBrielItemType();
+                $type->nextDay($item);
+                break;
+            }
+
             if ($item->name == 'Conjured Mana Cake') {
                 $qualityDayDelata = 2;
                 if ($item->quality - $qualityDayDelata < 0) {
