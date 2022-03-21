@@ -22,6 +22,14 @@ class GildedRose
     public function nextDay()
     {
         foreach ($this->items as $item) {
+            /** @todo refactor */
+            if ($item->name == 'Conjured Mana Cake') {
+                $item->quality = $item->quality - 2;
+                $item->sellIn--;
+
+                continue;
+            }
+
             if ($item->name != 'Aged Brie' and $item->name != 'Backstage passes to a TAFKAL80ETC concert') {
                 if ($item->quality > 0) {
                     if ($item->name != 'Sulfuras, Hand of Ragnaros') {
