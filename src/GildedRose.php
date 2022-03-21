@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\ItemTypes;
 
 class GildedRose
 {
@@ -23,6 +24,12 @@ class GildedRose
     {
         foreach ($this->items as $item) {
             /** @todo refactor */
+            if ($item->name == 'normal') {
+                $type = new ItemTypes\NormalItemType();
+                $type->nextDay($item);
+                break;
+            }
+
             if ($item->name == 'Conjured Mana Cake') {
                 $qualityDayDelata = 2;
                 if ($item->quality - $qualityDayDelata < 0) {
