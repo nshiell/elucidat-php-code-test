@@ -169,7 +169,7 @@ describe('Gilded Rose', function () {
                 $gr->nextDay();
                 expect($gr->getItem(0)->quality)->toBe(6);
                 expect($gr->getItem(0)->sellIn)->toBe(-1);
-            });/*
+            });
             it('updates Conjured items on the sell date at 0 quality', function () {
                 $gr = new GildedRose([new Item('Conjured Mana Cake', 0, 0)]);
                 $gr->nextDay();
@@ -187,7 +187,7 @@ describe('Gilded Rose', function () {
                 $gr->nextDay();
                 expect($gr->getItem(0)->quality)->toBe(0);
                 expect($gr->getItem(0)->sellIn)->toBe(-11);
-            });*/
+            });
         });
     });
 });
