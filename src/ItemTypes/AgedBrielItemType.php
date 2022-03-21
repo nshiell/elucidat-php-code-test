@@ -18,7 +18,7 @@ class AgedBrielItemType
 
         // The Quality of an item is never more than 50
         if ($item->quality + $qualityDelata > 50) {
-            $qualityDelata = 0;
+            $qualityDelata = 50 - $item->quality;
         }
 
         $item->quality = $item->quality + $qualityDelata;
