@@ -27,6 +27,10 @@ class GildedRose
                 $item->quality = $item->quality - 2;
                 $item->sellIn--;
 
+                if ($item->quality < 0) {
+                    $item->quality = 0;
+                }
+
                 continue;
             }
 
