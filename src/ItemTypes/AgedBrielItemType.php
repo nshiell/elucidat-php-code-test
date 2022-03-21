@@ -11,9 +11,9 @@ class AgedBrielItemType
         $qualityDelata = 1;
         $sellInDelata = -1;
 
-        // updates normal items on the sell date
+        // updates Brie items on the sell date
         if ($item->sellIn < 1) {
-            $qualityDelata = -2;
+            $qualityDelata = 2;
         }
 
         // The Quality of an item is never more than 50
