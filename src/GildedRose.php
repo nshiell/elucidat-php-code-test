@@ -36,6 +36,13 @@ class GildedRose
                 break;
             }
 
+            if ($item->name == 'Sulfuras, Hand of Ragnaros') {
+                $type = new ItemTypes\SulfuraslItemType();
+                $type->nextDay($item);
+                break;
+            }
+
+
             if ($item->name == 'Conjured Mana Cake') {
                 $qualityDayDelata = 2;
                 if ($item->quality - $qualityDayDelata < 0) {
