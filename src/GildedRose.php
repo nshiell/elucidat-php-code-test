@@ -48,6 +48,11 @@ class GildedRose
                 break;
             }
 
+            if ($item->name == 'Conjured Mana Cake') {
+                $type = new ItemTypes\ConjuredItemType();
+                $type->nextDay($item);
+                break;
+            }
 
             if ($item->name == 'Conjured Mana Cake') {
                 $qualityDayDelata = 2;
