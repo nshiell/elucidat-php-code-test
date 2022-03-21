@@ -4,8 +4,13 @@ namespace App\ItemTypes;
 
 use App\Item;
 
-class AgedBrielItemType
+class AgedBrieItemType
 {
+    public function itemIsThisType(Item $item): bool
+    {
+        return ($item->name == 'Aged Brie');
+    }
+
     public function nextDay(Item $item)
     {
         $qualityDelata = 1;

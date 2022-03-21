@@ -4,8 +4,13 @@ namespace App\ItemTypes;
 
 use App\Item;
 
-class NormalItemType
+class NormalItemType extends AbstractItemType
 {
+    public function itemIsThisType(Item $item): bool
+    {
+        return ($item->name == 'normal');
+    }
+
     public function nextDay(Item $item)
     {
         $qualityDelata = -1;
@@ -17,7 +22,7 @@ class NormalItemType
         }
 
         // The Quality of an item is never negative
-        if ( $item->quality + $qualityDelata < 0) {
+        if ($item->quality + $qualityDelata < 0) {
             $qualityDelata = 0;
         }
 

@@ -6,6 +6,11 @@ use App\Item;
 
 class ConjuredItemType
 {
+    public function itemIsThisType(Item $item): bool
+    {
+        return ($item->name == 'Conjured Mana Cake');
+    }
+
     public function nextDay(Item $item)
     {
         $qualityDelata = -2;

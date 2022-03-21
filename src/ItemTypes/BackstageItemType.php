@@ -4,8 +4,13 @@ namespace App\ItemTypes;
 
 use App\Item;
 
-class BackstagelItemType
+class BackstageItemType
 {
+    public function itemIsThisType(Item $item): bool
+    {
+        return ($item->name == 'Backstage passes to a TAFKAL80ETC concert');
+    }
+
     public function nextDay(Item $item)
     {
         $qualityDelata = 1;
