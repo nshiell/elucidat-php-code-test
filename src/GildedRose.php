@@ -24,7 +24,14 @@ class GildedRose
         foreach ($this->items as $item) {
             /** @todo refactor */
             if ($item->name == 'Conjured Mana Cake') {
-                $item->quality = $item->quality - 2;
+                $qualityDayDelata = 2;
+                if ($item->quality - $qualityDayDelata < 0) {
+                    $qualityDayDelata = 0;
+                } elseif ($item->sellIn < 1) {
+                    $qualityDayDelata = 4;
+                }
+
+                $item->quality = $item->quality - $qualityDayDelata;
                 $item->sellIn--;
 
                 if ($item->quality < 0) {
