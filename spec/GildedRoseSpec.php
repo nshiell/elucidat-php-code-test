@@ -189,15 +189,15 @@ describe('Gilded Rose', function () {
                 expect($gr->getItem(0)->sellIn)->toBe(-11);
             });
         });
-    });
-    context("Bad Input", function () {
-        it('Handles ItemType not found', function () {
-            $gr = new GildedRose([new Item('Unknown!', 0, 0)]);
-            expect(function () use ($gr) {$gr->nextDay();})->toThrow(
-                new \UnexpectedValueException(
-                    'ItemType for Unknown!, 0, 0 was not found'
-                )
-            );
+        context("Bad Input", function () {
+            it('Handles ItemType not found', function () {
+                $gr = new GildedRose([new Item('Unknown!', 0, 0)]);
+                expect(function () use ($gr) {$gr->nextDay();})->toThrow(
+                    new \UnexpectedValueException(
+                        'ItemType for Unknown!, 0, 0 was not found'
+                    )
+                );
+            });
         });
     });
 });
