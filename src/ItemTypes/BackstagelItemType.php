@@ -11,7 +11,10 @@ class BackstagelItemType
         $qualityDelata = 1;
         $sellInDelata = -1;
 
-        if ($item->sellIn <= 5) {
+        if ($item->sellIn < 1) {
+            // Quality drops to 0 after the concert
+            $qualityDelata = 0 - $item->quality;
+        } elseif ($item->sellIn <= 5) {
             // and by 3 when there are 5 days or less
             $qualityDelata = 3;
         } elseif ($item->sellIn <= 10) {
